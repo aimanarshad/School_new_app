@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import certificate from '../../assets/Certificate.png';
 import Cards from '../../componenets/Cards/Cards';
@@ -51,5 +52,7 @@ const Certificate = () => {
     </div>
   );
 };
+
+
 
 export default Certificate;
