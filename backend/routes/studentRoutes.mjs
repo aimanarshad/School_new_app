@@ -2,6 +2,7 @@ import express from "express";
 const router = express.Router();
 import ensureAuthorized from "../middleware/tokenVerification.mjs";
 import { getAllStudents,getOneStudent,createStudent,updateStudent,deleteStudent, showStudentAttendance , markStudentAttendance} from "../controller/studentController.mjs";
+import { getStudentFees, updateFeeStatus } from "../controller/studentController.mjs";
 
 router.get("/getAll-students", getAllStudents);
 router.get("/get-student/:id",getOneStudent);
@@ -11,6 +12,10 @@ router.delete("/delete-student/:id", deleteStudent);
 
 router.get("/show-attendance", showStudentAttendance);
 router.put("/mark-attendance/:_id", markStudentAttendance);
+
+router.get("/fees", getStudentFees);
+router.put("/fees/:id", updateFeeStatus);
+
 
 //ensureAuthorized middleware can be added to protect the routes 
 

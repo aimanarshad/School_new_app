@@ -7,22 +7,16 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
-
-
-
 import { showAttendanceAPI, markAttendanceAPI } from "../../../API call/StudentAPI";
 import { toast } from "react-toastify";
 
 const StudentAttendance = () => {
   const navigate = useNavigate();
   const [students, setStudents] = useState([]);
-
   const [search, setSearch] = useState("");
   const [selectAll, setSelectAll] = useState(false);
   const [date] = useState(new Date().toISOString().split("T")[0]);
 
-
- 
 const filteredStudents = students.filter(
   (s) =>
     s.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -48,7 +42,6 @@ const toggleAttendance = async (studentId) => {
   }
 };
 
-
   const toggleSelectAll = () => {
     setSelectAll(!selectAll);
     setStudents((prev) =>
@@ -59,10 +52,32 @@ const toggleAttendance = async (studentId) => {
   const presentCount = students.filter((s) => s.present).length;
   const totalCount = students.length;
 
+  useEffect(() => {
+  fetchStudents();
+}, []);
+
+const fetchStudents = async () => {
+  try {
+
+    const response = await showAttendanceAPI();
+
+    // Convert attendanceStatus → checkbox boolean
+    const formattedStudents = response.map((student) => ({
+      ...student,
+      present: student.status === "Present"
+    }));
+
+    setStudents(formattedStudents);
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
   return (
     <div style={{ padding: "2rem", backgroundColor: "#f8fff9", minHeight: "100vh" }}>
       {/* Header */}
-      <div className="d-flex justify-content-between align-items-center mb-4">
+      <div className="d-flex align-items-center mb-4">
         <button
           onClick={() => navigate(-1)}
           className="btn btn-outline-success me-3 fw-bold"
@@ -70,7 +85,7 @@ const toggleAttendance = async (studentId) => {
         >
           Back
         </button>
-        <h2 className="text-success fw-bold mb-0">Mark Student Attendance</h2>
+        <h2 className="text-success fw-bold mb-0">Student Attendance</h2>
       </div>
 
       <Card className="shadow border-0" style={{ borderRadius: "16px" }}>
@@ -96,8 +111,6 @@ const toggleAttendance = async (studentId) => {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   style={{ borderRadius: "0 12px 12px 0" }}
-
-                
 
                 />
               </InputGroup>

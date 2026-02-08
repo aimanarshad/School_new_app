@@ -349,9 +349,8 @@
 
 
 import React, { useState, useEffect } from 'react';
-
 import student from '../../../assets/students.png';
-// You can import more icons if needed later
+import Stats from './Stats';
 
 function Dashboard() {
   // State for counts
@@ -409,13 +408,7 @@ function Dashboard() {
           min-height: 100vh;
         }
 
-        .sidebar {
-          width: 260px;
-          background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%);
-          color: white;
-          padding-top: 24px;
-          flex-shrink: 0;
-        }
+    
 
         .sidebar-logo {
           font-size: 28px;
@@ -453,7 +446,7 @@ function Dashboard() {
 
         .main-content {
           flex: 1;
-          padding: 32px;
+          padding: 30px;
           background: #ffffff;
         }
 
@@ -491,7 +484,7 @@ function Dashboard() {
         .stats-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 24px;
+          gap: 18px;
           margin-bottom: 48px;
         }
 
@@ -512,14 +505,14 @@ function Dashboard() {
         }
 
         .stat-card .info h3 {
-          font-size: 42px;
-          font-weight: 800;
+          font-size: 3rem;
+          font-weight: bold;
           line-height: 1;
         }
 
         .stat-card .info p {
           font-size: 16px;
-          font-weight: 500;
+          font-weight: bold;
           opacity: 0.92;
           margin-top: 6px;
         }
@@ -542,7 +535,7 @@ function Dashboard() {
 
         .avatars {
           display: flex;
-          gap: 20px;
+          gap: 10px;
           overflow-x: auto;
           padding-bottom: 12px;
           scrollbar-width: thin;
@@ -558,8 +551,8 @@ function Dashboard() {
         }
 
         .avatar {
-          width: 72px;
-          height: 72px;
+          width: 52px;
+          height: 52px;
           border-radius: 50%;
           flex-shrink: 0;
           display: flex;
@@ -644,15 +637,14 @@ function Dashboard() {
         {/* Main Content */}
         <div className="main-content">
           <div className="top-bar">
-            <h1> Dashboard</h1>
+            <h1 style={{color:'darkblue'}}>Administrative Dashboard</h1>
             <div className="top-icons">
-              <i className="bi bi-search"></i>
-              <i className="bi bi-bell"></i>
-              <i className="bi bi-chat"></i>
-              <i className="bi bi-grid-3x3-gap"></i>
+              
               <i className="bi bi-person-circle"></i>
             </div>
+            
           </div>
+          
 
           {/* Stats Cards */}
           <div className="stats-grid">
@@ -688,6 +680,7 @@ function Dashboard() {
               <i className="bi bi-check-circle-fill"></i>
             </div>
           </div>
+          <p className='mb-5'>Manage your school effortlessly with our all-in-one platform. From tracking student attendance and academic performance to monitoring fees, staff, and exams, everything you need is available at a glance. Stay organized, save time, and make informed decisions to ensure a smooth and efficient school administration.</p>
 
           {error && (
             <div style={{
@@ -707,15 +700,14 @@ function Dashboard() {
             <div className="avatars">
               <div className="avatar" style={{ backgroundColor: '#ef4444' }}>A</div>
               <div className="avatar" style={{ backgroundColor: '#10b981' }}>B</div>
-              <div className="avatar" style={{ backgroundColor: '#f59e0b' }}>C</div>
+              
               <div className="avatar" style={{ backgroundImage: `url(${student})` }}></div>
-              <div className="avatar" style={{ backgroundColor: '#3b82f6' }}>E</div>
-              <div className="avatar" style={{ backgroundColor: '#ec4899' }}>F</div>
+             <div className="avatar" style={{ backgroundColor: '#f59e0b' }}>C</div>
             </div>
           </div>
 
           {/* Present Statistics */}
-          <div className="pie-section">
+          {/* <div className="pie-section">
             <h2 className="section-title">Present Statistics</h2>
             <div className="donut-container">
               <div className="donut"></div>
@@ -724,7 +716,8 @@ function Dashboard() {
             <p style={{ color: '#64748b', fontSize: '16px', fontWeight: 500 }}>
               5 out of 7 students present today
             </p>
-          </div>
+          </div> */}
+          <Stats />
         </div>
       </div>
     </>

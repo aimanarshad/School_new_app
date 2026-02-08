@@ -97,4 +97,30 @@ const markStudentAttendance = async (req, res) => {
   }
 };
 
-export { getAllStudents, createStudent, getOneStudent, deleteStudent, updateStudent, showStudentAttendance, markStudentAttendance };
+const getStudentFees = async (req, res) => {
+  try {
+    const students = await Student.find().sort({ rollNo: 1 });
+    res.json(students);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+const updateFeeStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { feeStatus } = req.body;
+
+    const student = await Student.findByIdAndUpdate(
+      id,
+      { feeStatus },
+      { new: true }
+    );
+
+    res.json(student);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+
+export { getAllStudents, createStudent, getOneStudent, deleteStudent, updateStudent, showStudentAttendance, markStudentAttendance, getStudentFees, updateFeeStatus };

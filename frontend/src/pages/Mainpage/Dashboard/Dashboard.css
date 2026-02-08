@@ -1,32 +1,229 @@
-/* Container for cards */
-.dash-cards {
+/* Dashboard.css */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f8fafc;
+}
+
+/* Dashboard Layout */
+.dashboard {
   display: flex;
-  gap: 15px; /* space between cards */
-  flex-wrap: wrap; /* allow wrapping on small screens */
-  margin-bottom: 20px;
+  flex-wrap: wrap; /* wrap sidebar + content */
+  min-height: 100vh;
 }
 
-/* Card flex for large screens: 4 in a row */
-@media (min-width: 992px) {
-  .dash-cards {
-    flex-wrap: nowrap; /* force single row */
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  padding-top: 24px;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0 24px 32px 24px;
+  letter-spacing: -0.5px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background: rgba(255,255,255,0.12);
+  transform: translateX(4px);
+}
+
+.sidebar i {
+  font-size: 22px;
+  width: 24px;
+  text-align: center;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 32px;
+  background: #ffffff;
+  min-width: 0;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.top-bar h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+
+.top-icons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.top-icons i {
+  font-size: 24px;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.top-icons i:hover {
+  color: #3b82f6;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  padding: 24px 20px;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.14);
+}
+
+.stat-card .info h3 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-card .info p {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.92;
+  margin-top: 4px;
+}
+
+.stat-card i {
+  font-size: 48px;
+  opacity: 0.88;
+}
+
+/* Recent Students */
+.recent-students {
+  margin-bottom: 32px;
+}
+
+.avatars {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.avatars::-webkit-scrollbar {
+  height: 6px;
+}
+
+.avatars::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.avatar:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .dash-cards > div {
-    flex: 1 1 0; /* evenly distributed in one row */
-    max-width: none; /* remove max-width restrictions */
+  .top-bar h1 {
+    font-size: 24px;
   }
 }
 
-/* Card flex for medium screens: 2 per row */
-@media (min-width: 577px) and (max-width: 991px) {
-  .dash-cards > div {
-    flex: 1 1 calc(50% - 15px); /* 2 cards per row */
+@media (max-width: 640px) {
+  .dashboard {
+    flex-direction: column;
   }
-}
-
-/* Mobile screens: 1 per row */
-@media (max-width: 576px) {
-  .dash-cards > div {
-    flex: 1 1 100%; /* 1 card per row */
+  .main-content {
+    padding: 16px;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .top-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .top-icons {
+    justify-content: flex-start;
+  }
+  .avatars {
+    gap: 12px;
+  }
+  .avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
   }
 }

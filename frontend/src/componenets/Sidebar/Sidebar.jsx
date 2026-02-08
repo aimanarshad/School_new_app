@@ -85,9 +85,9 @@ function Sidebar() {
             </Link>
           </li>
            <li>
-            <Link to="/Classes" className="nav-link text-dark">
+            {/* <Link to="/Classes" className="nav-link text-dark">
               <i className="bi bi-list-stars me-2"></i> Classes
-            </Link>
+            </Link> */}
           </li>
         </ul>
 

@@ -30,7 +30,7 @@ function App() {
              <Route path="Fee" element={<PrivateRoute><Fee/></PrivateRoute>}/>
              <Route path="Certificate" element={<PrivateRoute><Certificate/></PrivateRoute>}/>
 
-             <Route path="Classes" element={<PrivateRoute><Classes /></PrivateRoute>} />
+             {/* <Route path="Classes" element={<PrivateRoute><Classes /></PrivateRoute>} /> */}
              <Route path="subjects/:classId" element={<Subjects />} />
              <Route path="subject-detail/:classId/:subjectId" element={<SubjectDetail />} />
              <Route path="/attendance" element={<PrivateRoute><StudentAttendance /></PrivateRoute>} />

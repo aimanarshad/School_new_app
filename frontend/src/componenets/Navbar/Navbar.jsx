@@ -55,7 +55,12 @@ function Navbar({head}) {
             <button className="btn submit" type="submit">Search</button>
           </form>
            {/* <Button type="primary" icon={<LogoutOutlined />} onClick={logout}> Logout</Button> */}
-           <button className="btn btn-danger ms-2" onClick={logout}><LogoutOutlined /> Logout</button>
+           <div className="d-flex justify-content-end justify-content-center-sm justify-content-center-md justify-content-center-lg mt-1 mt-lg-0 mt-md-0 align-items-center mx-auto mx-lg-0 mx-md-0">
+  <button className="btn btn-danger ms-2" onClick={logout}>
+    <LogoutOutlined /> Logout
+  </button>
+</div>
+
         </div>
       
     </nav>

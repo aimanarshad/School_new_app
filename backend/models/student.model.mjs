@@ -29,6 +29,16 @@ const studentSchema = new mongoose.Schema({
         type: String,
         enum: ["Present", "Absent", "Leave"],
         default: "Absent"
+    },
+    monthlyFee: {
+        type: Number,
+        default: 5000
+    },
+
+    feeStatus: {
+        type: String,
+        enum: ["Paid", "Pending"],
+        default: "Pending"
     }
 
 }, { timestamps: true })

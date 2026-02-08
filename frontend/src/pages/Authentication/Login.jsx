@@ -22,7 +22,7 @@ const Login = () => {
         setLoading(true)
         console.log('Success:', values);
         try {
-            const newUser = await axios.post('http://localhost:3000/api/auth/login', values)
+            const newUser = await axios.post('http://localhost:5000/api/auth/login', values)
 
             console.log(newUser.data)
 
