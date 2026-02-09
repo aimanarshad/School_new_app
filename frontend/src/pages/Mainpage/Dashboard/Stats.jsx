@@ -11,7 +11,7 @@ const Stats = () => {
 
   const fetchAttendanceStats = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/students/show-attendance"); // fetch all students
+      const res = await axios.get("https://school-app-bice.vercel.app/api/students/show-attendance"); // fetch all students
       const students = res.data;
 
       const presentCount = students.filter((s) => s.status === "Present").length;

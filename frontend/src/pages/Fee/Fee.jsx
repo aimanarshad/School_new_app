@@ -37,7 +37,7 @@ const dueDate = "20-02-2026";
 
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/students/fees");
+      const res = await axios.get("https://school-app-bice.vercel.app/api/students/fees");
       setStudents(res.data);
     } catch (error) {
       console.error(error);
@@ -50,7 +50,7 @@ const dueDate = "20-02-2026";
 
     try {
       await axios.put(
-        `http://localhost:5000/api/students/fees/${student._id}`,
+        `https://school-app-bice.vercel.app/api/students/fees/${student._id}`,
         { feeStatus: newStatus }
       );
 
@@ -112,7 +112,7 @@ const totalDue = students.filter(s => s.feeStatus === "Pending").length;
 
         {/* Search & Table */}
         <Card className="shadow border-0" style={{ borderRadius: "16px" }}>
-          <Card.Body className="p-4">
+          <Card.Body className="p-0 p-lg-4 p-md-4">
             <Row className="mb-4">
               <Col lg={12}>
                 <Form.Control

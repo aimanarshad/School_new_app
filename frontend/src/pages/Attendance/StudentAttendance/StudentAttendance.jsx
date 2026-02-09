@@ -89,7 +89,7 @@ const fetchStudents = async () => {
       </div>
 
       <Card className="shadow border-0" style={{ borderRadius: "16px" }}>
-        <Card.Body className="p-4">
+        <Card.Body className="p-0 p-lg-4 p-md-4 py-2">
           {/* Top Controls */}
           <Row className="mb-4">
             <Col md={4}>

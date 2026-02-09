@@ -22,7 +22,7 @@ const SignUp = () => {
         console.log('Success:', values);
 
         try {
-            const newUser = await axios.post('http://localhost:5000/api/auth/signup', values)
+            const newUser = await axios.post('https://school-app-bice.vercel.app/api/auth/signup', values)
 
             console.log(newUser.data)
 

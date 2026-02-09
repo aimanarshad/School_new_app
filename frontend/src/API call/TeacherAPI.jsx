@@ -3,7 +3,7 @@
 import axios from 'axios';
 import { toast } from "react-toastify";
 
-const API_URL = 'http://localhost:5000/api/teachers';
+const API_URL = 'https://school-app-bice.vercel.app/api/teachers';
 
 // Helper to get token
 const getToken = () => localStorage.getItem('token');

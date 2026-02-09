@@ -26,6 +26,10 @@
   }
 }
 
+table {
+  width: 100%;
+}
+
 /* Optional: nicer button styling */
 .edit-btn {
   min-width: 70px;
@@ -43,4 +47,12 @@
 /* Hover effect for better feedback */
 tr:hover .action-buttons .btn {
   opacity: 0.9;
+}
+.table-responsive::-webkit-scrollbar {
+  display: none;
+}
+
+.table-responsive {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

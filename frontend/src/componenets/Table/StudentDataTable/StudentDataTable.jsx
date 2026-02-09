@@ -62,7 +62,7 @@ import './StudentDataTable.css';   // ← make sure this file is imported
 function StudentDataTable({ data, onEdit, onDelete }) {
   return (
     <div className="table-responsive">
-      <table className="table table-striped table-hover border border-2">
+      <table className="table table-striped table-hover">
         <thead style={{ fontWeight: 'bold', backgroundColor: '#0d6efd', color: 'white' }}>
           <tr>
             <th scope="col">Roll No</th>

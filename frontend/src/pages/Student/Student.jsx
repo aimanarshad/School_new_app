@@ -323,7 +323,10 @@ function Student() {
         </div>
       </Modal>
 
-      <h2 className="main-title mt-5">Students List</h2>
+     <h2 className="main-title mt-5">
+  Students List
+</h2>
+
 
       {loading ? (
         <p className="text-center py-5">Loading students...</p>

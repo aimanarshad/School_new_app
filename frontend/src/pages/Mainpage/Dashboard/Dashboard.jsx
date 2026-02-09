@@ -17,13 +17,13 @@ function Dashboard() {
         setError(null);
 
         // Fetch teachers
-        const teachersRes = await fetch('http://localhost:5000/api/teachers/getAll-teachers');
+        const teachersRes = await fetch('https://school-app-bice.vercel.app/api/teachers/getAll-teachers');
         if (!teachersRes.ok) throw new Error('Failed to fetch teachers');
         const teachersData = await teachersRes.json();
         setTeacherCount(Array.isArray(teachersData) ? teachersData.length : 0);
 
         // Fetch students
-        const studentsRes = await fetch('http://localhost:5000/api/students/getAll-students');
+        const studentsRes = await fetch('https://school-app-bice.vercel.app/api/students/getAll-students');
         if (!studentsRes.ok) throw new Error('Failed to fetch students');
         const studentsData = await studentsRes.json();
         setStudentCount(Array.isArray(studentsData) ? studentsData.length : 0);
@@ -324,7 +324,7 @@ function Dashboard() {
 
             <div className="stat-card" style={{ background: 'linear-gradient(135deg, #06b6d4, #0891b2)' }}>
               <div className="info">
-                <h3>100%</h3>
+                <h3>75%</h3>
                 <p>Attendance</p>
               </div>
               <i className="bi bi-check-circle-fill"></i>
