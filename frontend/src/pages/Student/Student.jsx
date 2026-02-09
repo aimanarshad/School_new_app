@@ -184,10 +184,7 @@ function Student() {
           onClick={() => setActiveModal("delete")}
         />
 
-<<<<<<< HEAD
         {/* No onClick → user should use the Edit button in the table */}
-=======
->>>>>>> be4190828c8ee542ffda5e1305ef60e438f8ec11
         
       </div>
 

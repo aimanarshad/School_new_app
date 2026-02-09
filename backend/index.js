@@ -32,11 +32,6 @@ app.use("/", (req, res, next) => {
   next();
 });
 
-const startServer = async () => {
-  await connectToDB(); 
-  app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-  });
-};
-
-startServer();
+app.listen(port, () => {
+  console.log(`Example app listening on port http://localhost:${port}`)
+})

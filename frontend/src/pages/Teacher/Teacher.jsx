@@ -540,16 +540,12 @@ function Teacher() {
           onClick={() => setActiveModal("delete")}
         />
 
-<<<<<<< HEAD
         {/* <Cards
           heading="Update Teacher"
           photo={UpdateTeacher}
           colour="#38abb869"
           // No onClick → users should use the Edit button in the table
         /> */}
-=======
-        
->>>>>>> be4190828c8ee542ffda5e1305ef60e438f8ec11
       </div>
 
       {/* Add Modal */}
