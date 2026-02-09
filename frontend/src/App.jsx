@@ -7,9 +7,7 @@ import Dashboard from './pages/Mainpage/Dashboard/Dashboard'
 import Student from './pages/Student/Student';
 import Teacher from './pages/Teacher/Teacher';
 import PrivateRoute from './routes/PrivateRoute';
-import Classes from './pages/Classes/Classes';
-import Subjects from './pages/Subjects/Subjects';
-import SubjectDetail from './pages/SubjectDetail/SubjectDetail';
+
 import SignUp from './pages/Authentication/signup';
 import Login from './pages/Authentication/Login';
 import AppRoute from './routes/AppRoute';
@@ -30,9 +28,7 @@ function App() {
              <Route path="Fee" element={<PrivateRoute><Fee/></PrivateRoute>}/>
              <Route path="Certificate" element={<PrivateRoute><Certificate/></PrivateRoute>}/>
 
-             {/* <Route path="Classes" element={<PrivateRoute><Classes /></PrivateRoute>} /> */}
-             <Route path="subjects/:classId" element={<Subjects />} />
-             <Route path="subject-detail/:classId/:subjectId" element={<SubjectDetail />} />
+            
              <Route path="/attendance" element={<PrivateRoute><StudentAttendance /></PrivateRoute>} />
 
              

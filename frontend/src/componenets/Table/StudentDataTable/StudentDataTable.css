@@ -1,10 +1,46 @@
+/* src/components/Table/StudentDataTable/StudentDataTable.css */
 
 @media (max-width: 576px) {
-    
-
   .table td,
   .table th {
-    padding: 4px 2px !important; /* smaller padding */
-    font-size: 8px !important;  /* smaller text */
+    padding: 6px 4px !important;
+    font-size: 0.78rem !important;     /* better than 8px – still readable */
   }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px !important;
+  }
+
+  .btn-sm {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .table td,
+  .table th {
+    font-size: 0.85rem;
+  }
+}
+
+/* Optional: nicer button styling */
+.edit-btn {
+  min-width: 70px;
+}
+
+.delete-btn {
+  min-width: 80px;
+}
+
+/* Make actions column not wrap awkwardly */
+.action-buttons .btn {
+  white-space: nowrap;
+}
+
+/* Hover effect for better feedback */
+tr:hover .action-buttons .btn {
+  opacity: 0.9;
 }
