@@ -184,13 +184,7 @@ function Student() {
           onClick={() => setActiveModal("delete")}
         />
 
-        {/* No onClick → user should use the Edit button in the table */}
-        <Cards
-          heading="Update Student"
-          photo={UpdateStudent}
-          colour="#38abb869"
-          // onClick removed - edit is now done via table row buttons
-        />
+        
       </div>
 
       {/* ────────────────────────────────────────────── */}
