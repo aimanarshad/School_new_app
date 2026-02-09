@@ -8,7 +8,7 @@ import Student from './pages/Student/Student';
 import Teacher from './pages/Teacher/Teacher';
 import PrivateRoute from './routes/PrivateRoute';
 
-import SignUp from './pages/Authentication/signup';
+import SignUp from './pages/Authentication/Signup'
 import Login from './pages/Authentication/Login';
 import AppRoute from './routes/AppRoute';
 import { Routes, Route } from "react-router-dom";
