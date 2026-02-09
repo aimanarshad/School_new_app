@@ -78,7 +78,7 @@ function Student() {
       await addStudentAPI(formData);
       resetForm();
       setActiveModal(null);
-      toast.success("Student added successfully");
+      // toast.success("Student added successfully");
       fetchStudents();
     } catch (err) {
       // error toast handled in interceptor
@@ -96,7 +96,7 @@ function Student() {
       await updateStudentAPI(editingStudentId, formData);
       resetForm();
       setActiveModal(null);
-      toast.success("Student updated successfully");
+      // toast.success("Student updated successfully");
       fetchStudents();
     } catch (err) {
       // error toast handled in interceptor
@@ -124,7 +124,7 @@ function Student() {
       await deleteStudentAPI(student._id);
       setDeleteRollNo("");
       setActiveModal(null);
-      toast.success("Student deleted successfully");
+      // toast.success("Student deleted successfully");
       fetchStudents();
     } catch (err) {
       // error toast handled in interceptor
@@ -185,12 +185,7 @@ function Student() {
         />
 
         {/* No onClick → user should use the Edit button in the table */}
-        <Cards
-          heading="Update Student"
-          photo={UpdateStudent}
-          colour="#38abb869"
-          // onClick removed - edit is now done via table row buttons
-        />
+        
       </div>
 
       {/* ────────────────────────────────────────────── */}

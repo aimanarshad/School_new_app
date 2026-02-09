@@ -87,8 +87,8 @@ const totalDue = students.filter(s => s.feeStatus === "Pending").length;
           <Col md={4} lg={4}>
             <Card className="text-white shadow border-0 py-5" style={{ background: "linear-gradient(135deg, #2E8B57, #3CB371)", borderRadius: "16px" }}>
               <Card.Body className="text-center">
-                <h5>Total Collected Fees</h5>
-                <h3 className="fw-bold">Rs. {totalCollected.toLocaleString()}</h3>
+                <h5>Student with paid fees</h5>
+                <h3 className="fw-bold">{totalCollected.toLocaleString()}</h3>
               </Card.Body>
             </Card>
           </Col>
@@ -104,7 +104,7 @@ const totalDue = students.filter(s => s.feeStatus === "Pending").length;
             <Card className="text-white shadow border-0 py-5" style={{ background: "linear-gradient(135deg, #DAA520, #FFB84D)", borderRadius: "16px" }}>
               <Card.Body className="text-center">
                 <h5>Students with Unpaid Fees</h5>
-                <h3 className="fw-bold">Rs. {totalDue.toLocaleString()}</h3>
+                <h3 className="fw-bold">{totalDue.toLocaleString()}</h3>
               </Card.Body>
             </Card>
           </Col>

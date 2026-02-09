@@ -316,7 +316,7 @@ function Dashboard() {
 
             <div className="stat-card" style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)' }}>
               <div className="info">
-                <h3>1</h3>
+                <h3>5</h3>
                 <p>Class</p>
               </div>
               <i className="bi bi-building"></i>
